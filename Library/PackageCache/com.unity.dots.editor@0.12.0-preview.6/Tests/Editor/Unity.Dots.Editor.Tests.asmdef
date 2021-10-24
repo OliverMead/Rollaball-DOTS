@@ -1,0 +1,37 @@
+{
+    "name": "Unity.DOTS.Editor.Tests",
+    "references": [
+        "GUID:734d92eba21c94caba915361bd5ac177",
+        "GUID:e0cd26848372d4e5c891c569017e11f1",
+        "GUID:8819f35a0fc84499b990e90a4ca1911f",
+        "GUID:5f3cf485eb0554709a8abbeace890c86",
+        "GUID:61431be5104c24137b41fcf2264ef434",
+        "GUID:f3ea3303be3f9ea4eb380e2ebecaab21",
+        "GUID:0f14985c7cd188246a215cae5e2919a6",
+        "GUID:27619889b8ba8c24980f49ee34dbb44a",
+        "GUID:0acc523941302664db1f4e527237feb3",
+        "GUID:a5baed0c9693541a5bd947d336ec7659",
+        "GUID:2765e68924a08a94ea0ea66b31c0168f",
+        "GUID:e6fd7f05e305677498be9a778f5ad209",
+        "GUID:807be9350277eff4182cd3600de41d3a",
+        "GUID:c38fb62397af04c51b143415e1db6d90",
+        "GUID:c0dd0d10738d4ad4a9de57c559d0ca1b",
+        "GUID:388060bf34f9a6a40bafbac77240e259",
+        "GUID:e78ca1c4f9cf59b4c988dfe82dea3e7f",
+        "GUID:416d137b1126dbf408443d029c73482a"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "noEngineReferences": false
+}

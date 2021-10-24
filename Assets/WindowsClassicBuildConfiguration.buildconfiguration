@@ -1,0 +1,25 @@
+{
+    "Dependencies": [
+        "GlobalObjectId_V1-1-6443d55c1fee509dbadd0eb503054653-93214019566545601-0"
+    ],
+    "Components": [
+        {
+            "$type": "Unity.Build.Common.GeneralSettings, Unity.Build",
+            "ProductName": "Product Name",
+            "CompanyName": "Company Name",
+            "Version": "1.0.0"
+        },
+        {
+            "$type": "Unity.Build.Common.SceneList, Unity.Build",
+            "$version": 1,
+            "BuildCurrentScene": false,
+            "SceneInfos": []
+        },
+        {
+            "$type": "Unity.Build.Classic.ClassicBuildProfile, Unity.Build.Classic",
+            "$version": 1,
+            "Platform": "win",
+            "Configuration": 2
+        }
+    ]
+}
