@@ -675,7 +675,6 @@ GameObject:
   - component: {fileID: 507174078}
   - component: {fileID: 507174077}
   - component: {fileID: 507174080}
-  - component: {fileID: 507174082}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -780,18 +779,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!114 &507174082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 507174076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81779cfc0bf0e3744be70b0b1b874bac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &549188081
 GameObject:
   m_ObjectHideFlags: 0
@@ -1817,8 +1804,9 @@ GameObject:
   - component: {fileID: 1928716924}
   - component: {fileID: 1928716923}
   - component: {fileID: 1928716915}
-  - component: {fileID: 1928716925}
+  - component: {fileID: 1928716921}
   - component: {fileID: 1928716917}
+  - component: {fileID: 1928716925}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1928,6 +1916,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1928716921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928716914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cde58669e8cc48b5ae8042c5375efa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  follower: {fileID: 507174076}
 --- !u!114 &1928716923
 MonoBehaviour:
   m_ObjectHideFlags: 0

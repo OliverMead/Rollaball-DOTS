@@ -2,10 +2,15 @@ using UnityEngine;
 using Unity.Entities;
 using Unity.Transforms;
 using Unity.Physics;
+using Unity.Physics.Systems;
 using Unity.Mathematics;
 using FM = Unity.Physics.Extensions.ForceMode;
 using PCE = Unity.Physics.Extensions.PhysicsComponentExtensions;
 
+// ensure all simulation is done first (including trigger collection)
+[UpdateAfter(typeof(EndFramePhysicsSystem))]
+// don't miss a frame, since we only want EventOverlapState.Enter
+[AlwaysUpdateSystem]
 public partial class PlayerSystem : SystemBase
 {
     EndSimulationEntityCommandBufferSystem m_EndSimulationECBSystem;
@@ -54,13 +59,11 @@ public partial class PlayerSystem : SystemBase
             .WithName("PlayerTriggerEvents_Scores")
             .WithAll<Player>()
             .ForEach(
-                (int entityInQueryIndex, ref Player p, in Entity e,
-                 in DynamicBuffer<StatefulTriggerEvent> buf) =>
+                (int entityInQueryIndex, ref Player p, in Entity e, in DynamicBuffer<StatefulTriggerEvent> buf) =>
             {
                 foreach (var te in buf)
                 {
                     var other = te.GetOther(e);
-                    // OnTriggerEnter
                     if (te.State == EventOverlapState.Enter
                         && HasComponent<Pickup>(other))
                     {
