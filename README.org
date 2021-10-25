@@ -1,0 +1,4 @@
+#+TITLE: Rollaball DOTS
+
+I am building this project in tandem with writing a quasi guide for DOTS. Please
+see [[https://github.com/OliverMead/dots-guide][my writing on DOTS]] for more information.
