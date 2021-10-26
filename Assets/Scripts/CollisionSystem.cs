@@ -12,6 +12,7 @@ using Unity.Jobs;
 using Unity.Mathematics;
 using Unity.Physics;
 using Unity.Physics.Systems;
+using UnityEngine;
 using System;
 
 public enum EventOverlapState
@@ -80,7 +81,7 @@ public struct StatefulTriggerEvent : IBufferElementData, IComparable<StatefulTri
 [UpdateInGroup(typeof(FixedStepSimulationSystemGroup))]
 [UpdateAfter(typeof(StepPhysicsWorld))]
 [UpdateBefore(typeof(EndFramePhysicsSystem))]
-[AlwaysUpdateSystem]
+[ExecuteAlways]
 public class CollisionSystem : SystemBase
 {
     public JobHandle OutDependency => base.Dependency;
@@ -257,8 +258,7 @@ public class CollisionSystem : SystemBase
         // have a trigger event buffer
         var collectBuffers = Entities
             .WithNone<ExcludeTriggerEventConversion>()
-            .ForEach((Entity e, ref DynamicBuffer<StatefulTriggerEvent> buf)
-                => entityBuffersMap.Add(e, 0))
+            .ForEach((Entity e, ref DynamicBuffer<StatefulTriggerEvent> buf) => entityBuffersMap.Add(e, 0))
             .WithBurst()
             .Schedule(Dependency);
 

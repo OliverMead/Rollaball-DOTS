@@ -8,9 +8,9 @@ using FM = Unity.Physics.Extensions.ForceMode;
 using PCE = Unity.Physics.Extensions.PhysicsComponentExtensions;
 
 // ensure all simulation is done first (including trigger collection)
-[UpdateAfter(typeof(EndFramePhysicsSystem))]
+// [UpdateAfter(typeof(EndFramePhysicsSystem))] // not actually necessary
 // don't miss a frame, since we only want EventOverlapState.Enter
-[AlwaysUpdateSystem]
+[ExecuteAlways]
 public partial class PlayerSystem : SystemBase
 {
     EndSimulationEntityCommandBufferSystem m_EndSimulationECBSystem;
@@ -64,6 +64,7 @@ public partial class PlayerSystem : SystemBase
                 foreach (var te in buf)
                 {
                     var other = te.GetOther(e);
+                    // OnTriggerEnter
                     if (te.State == EventOverlapState.Enter
                         && HasComponent<Pickup>(other))
                     {
